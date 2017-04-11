@@ -10,7 +10,7 @@ Note that if you're using Windows, you need to install a virtualization tool suc
 
 # Using the archetype
 
-Clone this repository and copy this Maven archetype to your local repository, located under homedir/.m2/repository_.
+Clone this repository and copy this Maven archetype to your local repository, located under __homedir/.m2/repository__.
 
   ```
   git clone https://github.com/thibseisel/tomee-webapp-archetype.git  
