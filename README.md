@@ -12,15 +12,17 @@ Note that if you're using Windows, you need to install a virtualization tool suc
 
 Clone this repository and copy this Maven archetype to your local repository, located under _%userprofile%/.m2/repository_.
 
-  `
+  ```
   git clone https://github.com/thibseisel/tomee-webapp-archetype.git  
   cd tomee-webapp-archetype  
   mvn install
-  `
+  ```
 
 You can now generate a new project using this archetype.
 
-`mvn archetype:generate -DarchetypeGroupId=fr.nihilus -DarchetypeArtifactId=tomee-webapp-archetype`
+```
+mvn archetype:generate -DarchetypeGroupId=fr.nihilus -DarchetypeArtifactId=tomee-webapp-archetype
+```
 
 You will be prompted to specify your groupId, artifactId, version and package name.
 Before accepting the setup by typing Y, check that the value of the following properties are correct :
@@ -39,15 +41,17 @@ Your project is now fully generated !
 
 Copy the content of the folder _docker/DEV_ of your generated project to your Linux virtual machine.
 In order to do that, you can use WinSCP or type the following command in a Git Bash :
-`scp -r docker/DEV/* username@localhost:~`
+```bash
+scp -r docker/DEV/* username@localhost:~
+```
 Where _username_ is the name of your user in virtual machine.
 
 When done, create the MySQL and TomEE docker images with the provided scripts.
 
-`
+```bash
 ./build-images.sh  
 ./run-images.sh  
-`
+```
 
 Check that TomEE is working correctly by opening your browser with the following url address : _http://localhost:8080_.
 Under the root folder of your generated project, deploy your application to tomEE with the following command :
@@ -61,14 +65,16 @@ If a success message appear, then your project and development environment are n
 You don't have to install a virtual machine to run Docker.
 Navigate to the docker/DEV directory of your generated project., and run the following scripts to create your MySQL and TomEE docker images :
 
-`
+```
 ./build-images.sh  
 ./run-images.sh  
-`
+```
 
 Check that TomEE is working correctly by opening your browser with the following url address : _http://localhost:8080_.
 Under the root folder of your generated project, deploy your application to tomEE with the following command :
-`mvn tomcat7:deploy`
+```
+mvn tomcat7:deploy
+```
 
 Finally, open a browser at _http://localhost:8080/myapp_, where myapp is the artifactId you gave when generating your project.
 If a success message appear, then your project and development environment are now all set !
