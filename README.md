@@ -80,12 +80,13 @@ Finally, open a browser at _http://localhost:8080/myapp_, where myapp is the art
 If a success message appear, then your project and development environment are now all set !
 
 # Sample code
-The generated project features an example of a working RESTful application, allowing to store and retrive books.
-In order to test it, you can issue the following requests :
+The generated project features an example of a working RESTful application allowing to store and retrieve books.
+Note that it only accepts JSON.
+You can issue the following requests :
 - __GET /api/books__ to get the list of all books from the database,
 - __GET /api/books/{id}__ to get a specific book by its id,
-- __POST /api/books__ to add a new book to the database (body must be valid JSON),
-- __PUT /api/books/{id}__ to update an existing book (body must be valid JSON),
+- __POST /api/books__ to add a new book to the database (body must feature and object with a property "title"),
+- __PUT /api/books/{id}__ to update an existing book (body must feature and object with a property "title"),
 - __DELETE /api/books/{id}__ to delete an existing book.
 
 You are free to modify or delete this code to replace it with your own application logic.
