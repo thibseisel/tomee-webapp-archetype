@@ -1,0 +1,9 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version='1.0' encoding='utf-8'?>
+<Context antiResourceLocking="false" privileged="true">
+
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>${symbol_dollar}{catalina.base}/conf/web.xml</WatchedResource>
+</Context>
