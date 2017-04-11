@@ -14,7 +14,9 @@ Clone this repository and copy this Maven archetype to your local repository, lo
 
 `
 git clone https://github.com/thibseisel/tomee-webapp-archetype.git
+
 cd tomee-webapp-archetype
+
 mvn install
 `
 
@@ -46,6 +48,7 @@ When done, create the MySQL and TomEE docker images with the provided scripts.
 
 `
 ./build-images.sh
+
 ./run-images.sh
 `
 
@@ -63,6 +66,7 @@ Navigate to the docker/DEV directory of your generated project., and run the fol
 
 `
 ./build-images.sh
+
 ./run-images.sh
 `
 
@@ -80,6 +84,6 @@ In order to test it, you can issue the following requests :
 - __GET /api/books/{id}__ to get a specific book by its id,
 - __POST /api/books__ to add a new book to the database (body must be valid JSON),
 - __PUT /api/books/{id}__ to update an existing book (body must be valid JSON),
-- __DELETE /api/books/{id} to delete an existing book.
+- __DELETE /api/books/{id}__ to delete an existing book.
 
 You are free to modify or delete this code to replace it with your own application logic.
