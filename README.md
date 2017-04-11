@@ -12,13 +12,11 @@ Note that if you're using Windows, you need to install a virtualization tool suc
 
 Clone this repository and copy this Maven archetype to your local repository, located under _%userprofile%/.m2/repository_.
 
-`
-git clone https://github.com/thibseisel/tomee-webapp-archetype.git
-
-cd tomee-webapp-archetype
-
-mvn install
-`
+  `
+  git clone https://github.com/thibseisel/tomee-webapp-archetype.git
+  cd tomee-webapp-archetype
+  mvn install
+  `
 
 You can now generate a new project using this archetype.
 
@@ -46,11 +44,10 @@ Where _username_ is the name of your user in virtual machine.
 
 When done, create the MySQL and TomEE docker images with the provided scripts.
 
-`
-./build-images.sh
-
-./run-images.sh
-`
+  `
+  ./build-images.sh
+  ./run-images.sh
+  `
 
 Check that TomEE is working correctly by opening your browser with the following url address : _http://localhost:8080_.
 Under the root folder of your generated project, deploy your application to tomEE with the following command :
@@ -64,11 +61,10 @@ If a success message appear, then your project and development environment are n
 You don't have to install a virtual machine to run Docker.
 Navigate to the docker/DEV directory of your generated project., and run the following scripts to create your MySQL and TomEE docker images :
 
-`
-./build-images.sh
-
-./run-images.sh
-`
+  `
+  ./build-images.sh
+  ./run-images.sh
+  `
 
 Check that TomEE is working correctly by opening your browser with the following url address : _http://localhost:8080_.
 Under the root folder of your generated project, deploy your application to tomEE with the following command :
