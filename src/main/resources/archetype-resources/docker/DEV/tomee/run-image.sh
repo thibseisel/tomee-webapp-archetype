@@ -1,13 +1,13 @@
 #!/bin/sh
 
-name='app-tomee'
+name=${artifactId}-tomee
 
 if [ $# -eq 1 ]; then
 
-	version=$1
+	vers=$1
 	
 	# Ce conteneur est-il déjà lancé ?
-	running=`docker ps --all --quiet --filter name=$name-$version`
+	running=`docker ps --all --quiet --filter name=$name-$vers`
 	
 	# Si c'est le cas, l'arreter et le détruire
 	if [ -n "$running" ]; then
@@ -16,11 +16,11 @@ if [ $# -eq 1 ]; then
 		docker rm --volumes $running
 	fi
 	
-	echo "Démarrage de $name-$version..."
-	docker run --name $name-$version \
+	echo "Démarrage de $name-$vers..."
+	docker run --name $name-$vers \
 		-p 8080:8080 \
-		--link app-mysql-$version:app-mysql \
-		-d $name-$version
+		--link ${artifactId}-mysql-$vers:${artifactId}-mysql \
+		-d $name-$vers
 
 else
 	echo 'Usage: run-image.sh <version>'

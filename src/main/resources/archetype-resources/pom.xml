@@ -6,7 +6,7 @@
 	<artifactId>${artifactId}</artifactId>
 	<version>${version}</version>
 	<packaging>war</packaging>
-	<name>${artifactId} TomEE Webapp</name>
+	<name>${artifactId}</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -137,7 +137,7 @@
 					<!-- Le nom du serveur doit correspondre à celui configuré dans ~.m2/settings.xml -->
 					<server>TomcatServer</server>
 					<!-- Le chemin doit correspondre à l'URL de l'application sur le serveur -->
-					<path>/app</path>
+					<path>/${artifactId}</path>
 					<warFile>${project.build.directory}/${project.build.finalName}.war</warFile>
 				</configuration>
 			</plugin>

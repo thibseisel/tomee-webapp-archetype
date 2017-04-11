@@ -1,10 +1,10 @@
 #!/bin/sh
 
-name=app-mysql
+name=${artifactId}-mysql
 
 if [ $# -eq 1 ]; then
-	version=$1
-	docker build -t $name-$version .
+	vers=$1
+	docker build -t $name-$vers .
 else
 	echo 'Usage: build-image.sh <version>'
 	exit 1

@@ -7,7 +7,7 @@
 	<!-- Remplacer dans la configuration ci-dessous les URL JDBC, le nom d'utilisateur 
 		MySQL et le mot de passe. -->
 
-	<Resource id="AppDSNonJTA" type="javax.sql.DataSource">
+	<Resource id="DSNonJTA" type="javax.sql.DataSource">
 
 		accessToUnderlyingConnectionAllowed = false
 		connectionProperties =
@@ -17,7 +17,7 @@
 		ignoreDefaultValues = false
 		initialSize = 0
 		JdbcDriver = com.mysql.jdbc.Driver
-		JdbcUrl = jdbc:mysql://app-mysql:3306/dbname
+		JdbcUrl = jdbc:mysql://${artifactId}-mysql:3306/${dbName}
 		JtaManaged = false
 		maxActive = 20
 		maxIdle = 20
@@ -26,7 +26,7 @@
 		minEvictableIdleTime = 30 minutes
 		minIdle = 0
 		numTestsPerEvictionRun = 3
-		Password = password
+		Password = ${dbPassword}
 		passwordCipher = PlainText
 		poolPreparedStatements = false
 		serviceId =
@@ -34,11 +34,11 @@
 		testOnReturn = false
 		testWhileIdle = false
 		timeBetweenEvictionRuns = -1 millisecond
-		UserName = root
+		UserName = ${dbUser}
 		validationQuery = SELECT 1
 	</Resource>
 
-	<Resource id="AppDS" type="javax.sql.DataSource">
+	<Resource id="DS" type="javax.sql.DataSource">
 
 		accessToUnderlyingConnectionAllowed = false
 		connectionProperties =
@@ -48,7 +48,7 @@
 		ignoreDefaultValues = false
 		initialSize = 0
 		JdbcDriver = com.mysql.jdbc.Driver
-		JdbcUrl = jdbc:mysql://app-mysql:3306/dbname
+		JdbcUrl = jdbc:mysql://${artifactId}-mysql:3306/${dbName}
 		JtaManaged = true
 		maxActive = 20
 		maxIdle = 20
@@ -57,7 +57,7 @@
 		minEvictableIdleTime = 30 minutes
 		minIdle = 0
 		numTestsPerEvictionRun = 3
-		Password = password
+		Password = ${dbPassword}
 		passwordCipher = PlainText
 		poolPreparedStatements = false
 		serviceId =
@@ -65,7 +65,7 @@
 		testOnReturn = false
 		testWhileIdle = false
 		timeBetweenEvictionRuns = -1 millisecond
-		UserName = root
+		UserName = ${dbUser}
 		validationQuery = SELECT 1
 		autoReconnect=true
 	</Resource>

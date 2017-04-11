@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=1.0.0.dev
+version=${version}
 
 echo 'Construction de MySQL...'
 cd mysql/

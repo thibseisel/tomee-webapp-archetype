@@ -1,13 +1,13 @@
 #!/bin/sh
 
-name='app-mysql'
+name=${artifactId}-mysql
 
 if [ $# -eq 1 ]; then
 
-	version=$1 
+	vers=$1 
 	
 	# Ce conteneur est-il déjà lancé ?
-	running=`docker ps --all --quiet --filter name=$name-$version`
+	running=`docker ps --all --quiet --filter name=$name-$vers`
 	
 	# Si c'est le cas, l'arrêter et le détruire
 	if [ -n "$running" ]; then
@@ -16,13 +16,13 @@ if [ $# -eq 1 ]; then
 		docker rm --volumes $running
 	fi
 	
-	echo "Démarrage de $name-$version..."
-	docker run --name $name-$version \
+	echo "Démarrage de $name-$vers..."
+	docker run --name $name-$vers \
 	-p 3306:3306 \
-	-e MYSQL_ROOT_PASSWORD=password \
-	-e MYSQL_DATABASE=dbname \
-	-e MYSQL_USER=app \
-	-e MYSQL_PASSWORD=password \
+	-e MYSQL_ROOT_PASSWORD=${dbRootPassword} \
+	-e MYSQL_DATABASE=${dbName} \
+	-e MYSQL_USER=${dbUser} \
+	-e MYSQL_PASSWORD=${dbPassword} \
 	-d $name-$version
 	
 else

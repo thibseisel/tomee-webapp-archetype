@@ -2,6 +2,31 @@
 <archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="tomee-webapp-sample"
     xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <!-- Liste des propriétés définies dans les templates -->
+    <requiredProperties>
+    	<!-- Nom de la base de données -->
+    	<requiredProperty key="dbName">
+    		<defaultValue>dbname</defaultValue>
+    	</requiredProperty>
+    	
+    	<!-- Mot de passe de l'utilisateur root MySQL -->
+    	<requiredProperty key="dbRootPassword">
+    		<defaultValue>password</defaultValue>
+    	</requiredProperty>
+    	
+    	<!-- Nom d'utilisateur de la base de données -->
+    	<requiredProperty key="dbUser">
+    		<defaultValue>user</defaultValue>
+    	</requiredProperty>
+    	
+    	<!-- Mot de passe de la base de données -->
+    	<requiredProperty key="dbPassword">
+    		<defaultValue>password</defaultValue>
+    	</requiredProperty>
+    	
+    </requiredProperties>
+    
   <fileSets>
   
   	<!-- Fichiers source d'exemple -->
