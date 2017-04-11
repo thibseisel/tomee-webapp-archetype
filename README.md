@@ -57,7 +57,7 @@ Check that TomEE is working correctly by opening your browser with the following
 Under the root folder of your generated project, deploy your application to tomEE with the following command :
 `mvn tomcat7:deploy`
 
-Finally, open a browser at _http://localhost:8080/myapp_, where myapp is the artifactId you gave when generating your project.
+Finally, open a browser at _http://localhost:8080/myapp_, where _myapp_ is the artifactId you gave when generating your project.
 If a success message appear, then your project and development environment are now all set !
 
 ## Linux
