@@ -1,5 +1,5 @@
 # tomee-webapp-archetype
-Maven archetype that allows quick creation of a webapp with a TomEE server and a MySQL database.
+Maven archetype that allows quick creation and deployment of a webapp with a TomEE server and a MySQL database.
 
 # Prerequisites
 
@@ -10,7 +10,7 @@ Note that if you're using Windows, you need to install a virtualization tool suc
 
 # Using the archetype
 
-Clone this repository and copy this Maven archetype to your local repository, located under _%userprofile%/.m2/repository_.
+Clone this repository and copy this Maven archetype to your local repository, located under homedir/.m2/repository_.
 
   ```
   git clone https://github.com/thibseisel/tomee-webapp-archetype.git  
