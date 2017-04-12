@@ -5,11 +5,11 @@
 
 	<groupId>fr.nihilus</groupId>
 	<artifactId>tomee-webapp-archetype</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<packaging>maven-archetype</packaging>
 
 	<name>tomee-webapp-sample-archetype</name>
-	<description>Un archetype permettant la création d'un projet TomEE + MySQL + Docker.</description>
+	<description>Application web TomEE + MySQL + Docker.</description>
 
 	<build>
 		<extensions>

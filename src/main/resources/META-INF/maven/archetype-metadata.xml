@@ -6,24 +6,16 @@
     <!-- Liste des propriétés définies dans les templates -->
     <requiredProperties>
     	<!-- Nom de la base de données -->
-    	<requiredProperty key="dbName">
-    		<defaultValue>dbname</defaultValue>
-    	</requiredProperty>
+    	<requiredProperty key="dbName"></requiredProperty>
     	
     	<!-- Mot de passe de l'utilisateur root MySQL -->
-    	<requiredProperty key="dbRootPassword">
-    		<defaultValue>password</defaultValue>
-    	</requiredProperty>
+    	<requiredProperty key="dbRootPassword"></requiredProperty>
     	
     	<!-- Nom d'utilisateur de la base de données -->
-    	<requiredProperty key="dbUser">
-    		<defaultValue>user</defaultValue>
-    	</requiredProperty>
+    	<requiredProperty key="dbUser"></requiredProperty>
     	
     	<!-- Mot de passe de la base de données -->
-    	<requiredProperty key="dbPassword">
-    		<defaultValue>password</defaultValue>
-    	</requiredProperty>
+    	<requiredProperty key="dbPassword"></requiredProperty>
     	
     </requiredProperties>
     

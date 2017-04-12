@@ -79,6 +79,27 @@ mvn tomcat7:deploy
 Finally, open a browser at _http://localhost:8080/myapp_, where myapp is the artifactId you gave when generating your project.
 If a success message appear, then your project and development environment are now all set !
 
+# Generated directory structure
+The generated project follows the Maven standard directory structure.
+
+```
++-- _docker
+	_src
+	+-- _main
+		+-- _java
+		+-- _resources
+		+-- _webapp
+	+-- _test
+		+-- java
+```
+
+- The __src/main/java__ folder contains the code for your Java server application
+- The __src/main/resources__ folder mainly contains configuration files (in our case, _persistence.xml_)
+- The __src/main/webapp__ folder is where you put your HTML and Javascript client code
+- The __src/test/java__ folder replicates the src/main/java package structure and contains all unit tests
+
+In this project, there's an additional __docker__ folder containing script you used to setup your development environment.
+
 # Sample code
 The generated project features an example of a working RESTful application allowing to store and retrieve books.
 Note that it only accepts JSON.
