@@ -5,7 +5,7 @@
 
 	<groupId>fr.nihilus</groupId>
 	<artifactId>tomee-webapp-archetype</artifactId>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<packaging>maven-archetype</packaging>
 
 	<name>tomee-webapp-sample-archetype</name>

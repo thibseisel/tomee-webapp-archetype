@@ -106,7 +106,7 @@ public class BookService {
 			if (oldBook != null) {
 				Book newBook = GsonInstance.get().fromJson(jsonBook, Book.class);
 				log.info("New book: " + newBook);
-				newBook = bookDao.add(newBook);
+				newBook = bookDao.update(id, newBook);
 				status = Status.OK;
 				entity = newBook;
 			} else {
