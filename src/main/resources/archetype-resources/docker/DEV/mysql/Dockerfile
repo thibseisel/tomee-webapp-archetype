@@ -1,4 +1,4 @@
-FROM mysql:5.7
+FROM mysql
 
 MAINTAINER "Le lab - Alain Dhennin <alain.dhennin@atos.net>"
 
