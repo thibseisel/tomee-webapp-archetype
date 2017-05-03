@@ -37,14 +37,6 @@
       </includes>
     </fileSet>
     
-    <!-- index.html -->
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory>src/main/webapp</directory>
-      <includes>
-        <include>**/*.html</include>
-      </includes>
-    </fileSet>
-    
     <!-- Exemples de tests unitaires -->
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
       <directory>src/test/java</directory>
@@ -78,5 +70,27 @@
         <include>.gitignore</include>
       </includes>
     </fileSet>
+	
+	<fileSet filtered="true" encoding="UTF-8">
+		<directory>angular</directory>
+		<includes>
+			<include>*.json</include>
+			<include>src/index.html</include>
+		</includes>
+	</fileSet>
+	
+	<fileSet filtered="false" encoding="UTF-8">
+		<directory>angular</directory>
+		<includes>
+			<include>.editorconfig</include>
+			<include>.gitignore</include>
+			<include>karma.conf.js</include>
+			<include>protractor.conf.js</include>
+			<include>README.md</include>
+			<include>e2e/*.*</include>
+			<include>src/**/*.*</include>
+		</includes>
+	</fileSet>
+	
   </fileSets>
 </archetype-descriptor>

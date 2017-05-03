@@ -1,0 +1,6 @@
+# Artefacts de build
+target/
+build/
+
+# Ignore les sources générées par angular
+src/main/webapp

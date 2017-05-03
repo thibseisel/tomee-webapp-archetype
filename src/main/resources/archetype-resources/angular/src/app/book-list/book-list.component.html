@@ -1,0 +1,15 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Titre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{book.id}}</td>
+      <td>{{book.title}}</td>
+    </tr>
+  </tbody>
+</table>
+<p class="text-danger" *ngIf="errorMessage">{{errorMessage}}</p>
