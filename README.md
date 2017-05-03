@@ -1,19 +1,20 @@
 # tomee-webapp-archetype
 Maven archetype that allows quick creation and deployment of a webapp with a TomEE server and a MySQL database.
+In addition to the server-side sample code, this archetype also setups the development environment of an Angular 4.0 front-end project.
 
 # Prerequisites
 
 - Maven
 - Docker
+- NodeJS v6.9.0 or newer
 
 Note that if you're using Windows, you need to install a virtualization tool such as VirtualBox to run Docker in a Linux virtual machine. 
 
-# Using the archetype
+# Using this archetype
 
 Clone this repository and copy this Maven archetype to your local repository, located under __homedir/.m2/repository__.
 
-  ```
-  git clone https://github.com/thibseisel/tomee-webapp-archetype.git  
+  ```	
   cd tomee-webapp-archetype  
   mvn install
   ```
@@ -54,8 +55,15 @@ When done, create the MySQL and TomEE docker images with the provided scripts.
 ```
 
 Check that TomEE is working correctly by opening your browser with the following url address : _http://localhost:8080_.
-Under the root folder of your generated project, deploy your application to tomEE with the following command :
-`mvn tomcat7:deploy`
+You can now build the Angular part of this sample project and then upload the whole project to the running TomEE container.
+Navigate to the root folder of the project and run those commands :
+```
+cd angular  
+npm install  
+npm run build  
+cd ..  
+mvn tomcat7:deploy
+```
 
 Finally, open a browser at _http://localhost:8080/myapp_, where _myapp_ is the artifactId you gave when generating your project.
 If a success message appear, then your project and development environment are now all set !
@@ -70,33 +78,40 @@ Navigate to the docker/DEV directory of your generated project., and run the fol
 ./run-images.sh  
 ```
 
-Check that TomEE is working correctly by opening your browser with the following url address : _http://localhost:8080_.
-Under the root folder of your generated project, deploy your application to tomEE with the following command :
+Check that TomEE is working correctly by navigating to the following url address : _http://localhost:8080_.
+You can now build the Angular part of this sample project and then upload the whole project to the running TomEE container.
+Navigate to the root folder of the project and run those commands :
 ```
+cd angular  
+npm run build  
+cd ..  
 mvn tomcat7:deploy
 ```
 
-Finally, open a browser at _http://localhost:8080/myapp_, where myapp is the artifactId you gave when generating your project.
+Finally, open a browser at _http://localhost:8080/myapp_, where _myapp_ is the artifactId you gave when generating your project.
 If a success message appear, then your project and development environment are now all set !
 
 # Generated directory structure
 The generated project follows the Maven standard directory structure.
 
 ```
+.
++-- _angular
 +-- _docker
-	_src
++--	_src
 	+-- _main
 		+-- _java
 		+-- _resources
 		+-- _webapp
 	+-- _test
-		+-- java
+		+-- java	
 ```
 
 - The __src/main/java__ folder contains the code for your Java server application
 - The __src/main/resources__ folder mainly contains configuration files (in our case, _persistence.xml_)
 - The __src/main/webapp__ folder is where you put your HTML and Javascript client code
 - The __src/test/java__ folder replicates the src/main/java package structure and contains all unit tests
+- The __angular__ folder contains an Angular project generated with [@angular/cli](https://cli.angular.io)
 
 In this project, there's an additional __docker__ folder containing script you used to setup your development environment.
 

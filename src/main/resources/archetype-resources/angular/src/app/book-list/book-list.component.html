@@ -3,13 +3,33 @@
     <tr>
       <th>ID</th>
       <th>Titre</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let book of books">
       <td>{{book.id}}</td>
       <td>{{book.title}}</td>
+      <td>
+        <button class="btn btn-link" (click)="deleteBook(book.id)">
+          <span class="fa fa-lg fa-trash text-danger"></span>
+        </button>
+      </td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <td></td>
+      <td>
+        <input class="form-control" name="title" [(ngModel)]="newBook.title" 
+          placeholder="Title du livre à ajouter" />
+      </td>
+      <td>
+        <button class="btn btn-success" (click)="addNewBook()">
+          <span class="fa fa-lg fa-plus"></span>
+        </button>
+      </td>
+    </tr>
+  </tfoot>
 </table>
 <p class="text-danger" *ngIf="errorMessage">{{errorMessage}}</p>

@@ -10,7 +10,7 @@ import { Book } from 'app/book';
 @Injectable()
 export class BookService {
   private readonly ENDPOINT = './api/books';
-  private headers: Headers = new Headers({ 'ContentType': 'application/json' });
+  private readonly headers: Headers = new Headers({ 'content-type': 'application/json' });
 
   constructor(private http: Http) { }
 
@@ -24,5 +24,18 @@ export class BookService {
     const msg = error as string;
     console.error(msg);
     return Observable.throw(msg);
+  }
+
+  add(book: Book): Observable<Book> {
+    return this.http.post(this.ENDPOINT, JSON.stringify(book), {headers: this.headers})
+      .map(res => res.json() as Book)
+      .catch(this.onError);
+  }
+
+  delete(id: number): Observable<any> {
+    const url = this.ENDPOINT + '/' + id;
+    return this.http.delete(url, {headers: this.headers})
+      .map(res => undefined)
+      .catch(this.onError);
   }
 }
