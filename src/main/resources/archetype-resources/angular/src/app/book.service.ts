@@ -10,7 +10,7 @@ import { Book } from 'app/book';
 @Injectable()
 export class BookService {
   private readonly ENDPOINT = './api/books';
-  private readonly headers: Headers = new Headers({ 'content-type': 'application/json' });
+  private readonly headers: Headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: Http) { }
 
@@ -32,10 +32,10 @@ export class BookService {
       .catch(this.onError);
   }
 
-  delete(id: number): Observable<any> {
+  delete(id: number): Observable<void> {
     const url = this.ENDPOINT + '/' + id;
     return this.http.delete(url, {headers: this.headers})
-      .map(res => undefined)
+      .map(res => null)
       .catch(this.onError);
   }
 }
