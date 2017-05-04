@@ -46,7 +46,7 @@ export class BookListComponent implements OnInit {
   private removeBookFromList(deletedId: number): void {
     const index = this.books.findIndex(book => book.id == deletedId);
     if (index >= 0) {
-      this.books.splice(index);
+      this.books.splice(index, 1);
     }
   }
 }

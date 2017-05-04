@@ -1,13 +1,13 @@
 #!/bin/bash
 
-version=${version}
+vers=${version}
 
 echo 'Lancement du conteneur MySQL...'
 cd mysql/
-./run-image.sh $version
+./run-image.sh $vers
 cd ..
 
 echo 'Lancement du conteneur Tomee...'
 cd tomee/
-./run-image.sh $version
+./run-image.sh $vers
 cd ..
