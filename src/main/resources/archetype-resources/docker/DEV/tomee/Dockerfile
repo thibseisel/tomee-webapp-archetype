@@ -1,6 +1,4 @@
-FROM tomee:8-jdk-7.0.1-plus
-
-MAINTAINER "Le lab - Alain Dhennin <alain.dhennin@atos.net>"
+FROM tomee:8-jdk-7.0.3-plus
 
 # On expose le port 8080 de tomcat a l'exterieur du conteneur
 EXPOSE 8080
