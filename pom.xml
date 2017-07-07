@@ -5,11 +5,10 @@
 
 	<groupId>fr.nihilus</groupId>
 	<artifactId>tomee-webapp-archetype</artifactId>
-	<version>2.0.0</version>
+	<version>2.1.0</version>
 	<packaging>maven-archetype</packaging>
 
 	<name>tomee-webapp-archetype</name>
-	<description>Angular + TomEE + MySQL + Docker.</description>
 
 	<build>
 		<extensions>
@@ -33,4 +32,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<description>A Maven archetype that allows quick creation and deployment of a JavaEE webapp.</description>
 </project>

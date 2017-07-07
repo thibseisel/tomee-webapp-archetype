@@ -1,6 +1,10 @@
-# tomee-webapp-archetype
-Maven archetype that allows quick creation and deployment of a webapp with a TomEE server and a MySQL database.
-In addition to the server-side sample code, this archetype also setups the development environment of an Angular 4.0 front-end project.
+A Maven archetype that allows quick creation and deployment of a JavaEE webapp.
+
+# Features
+- [Apache TomEE](https://tomee.apache.org) application server with JAX-RS, EJB and JPA API out of the box,
+- [MariaDB](https://mariadb.org) open-source database,
+- [Docker](https://docker.com) container engine for quick deployment in your dev/prod environment,
+- [Angular](https://angular.io) front-end framework
 
 # Prerequisites
 
@@ -8,18 +12,12 @@ In addition to the server-side sample code, this archetype also setups the devel
 - Docker
 - NodeJS v6.9.0 or newer
 
-Note that if you're using Windows, you need to install a virtualization tool such as VirtualBox to run Docker in a Linux virtual machine. 
+Note that if you're using Windows, you need to install a virtualization tool such as VirtualBox to run Docker in a Linux virtual machine.
 
 # Using this archetype
 
-Clone this repository and copy this Maven archetype to your local repository, located under __homedir/.m2/repository__.
-
-  ```	
-  cd tomee-webapp-archetype  
-  mvn install
-  ```
-
-You can now generate a new project using this archetype.
+The archetype is available through Maven Central. You don't have to manually download anything.
+Just open a command prompt and type in the following command to start the creation of your project :
 
 ```
 mvn archetype:generate -DarchetypeGroupId=fr.nihilus -DarchetypeArtifactId=tomee-webapp-archetype
@@ -78,7 +76,7 @@ Navigate to the docker/DEV directory of your generated project., and run the fol
 ./run-images.sh  
 ```
 
-Check that TomEE is working correctly by navigating to the following url address : _http://localhost:8080_.
+Check that TomEE is working correctly by navigating to the following url address : <http://localhost:8080>.
 You can now build the Angular part of this sample project and then upload the whole project to the running TomEE container.
 Navigate to the root folder of the project and run those commands :
 ```
@@ -88,7 +86,7 @@ cd ..
 mvn tomcat7:deploy
 ```
 
-Finally, open a browser at _http://localhost:8080/myapp_, where _myapp_ is the artifactId you gave when generating your project.
+Finally, open a browser at <http://localhost:8080/myapp>, where _myapp_ is the artifactId you gave when generating your project.
 If a success message appear, then your project and development environment are now all set !
 
 # Generated directory structure
@@ -104,7 +102,7 @@ The generated project follows the Maven standard directory structure.
 		+-- _resources
 		+-- _webapp
 	+-- _test
-		+-- java	
+		+-- java
 ```
 
 - The __src/main/java__ folder contains the code for your Java server application
@@ -113,7 +111,7 @@ The generated project follows the Maven standard directory structure.
 - The __src/test/java__ folder replicates the src/main/java package structure and contains all unit tests
 - The __angular__ folder contains an Angular project generated with [@angular/cli](https://cli.angular.io)
 
-In this project, there's an additional __docker__ folder containing script you used to setup your development environment.
+In this project, there's an additional __docker__ folder containing scripts you used to setup your development environment.
 
 # Sample code
 The generated project features an example of a working RESTful application allowing to store and retrieve books.
@@ -124,5 +122,7 @@ You can issue the following requests :
 - __POST /api/books__ to add a new book to the database (body must feature and object with a property "title"),
 - __PUT /api/books/{id}__ to update an existing book (body must feature and object with a property "title"),
 - __DELETE /api/books/{id}__ to delete an existing book.
+
+You can also consume this API with the sample Angular application available at <http://localhost:8080/myapp>.
 
 You are free to modify or delete this code to replace it with your own application logic.
