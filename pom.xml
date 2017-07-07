@@ -11,6 +11,7 @@
 	<name>TomEE Webapp Archetype</name>
 	
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<bintray.subject>nihilus</bintray.subject>
 		<bintray.repo>maven</bintray.repo>
 		<bintray.package>tomee-webapp-archetype</bintray.package>
