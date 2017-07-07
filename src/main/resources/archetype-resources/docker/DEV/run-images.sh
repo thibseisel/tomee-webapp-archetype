@@ -2,12 +2,12 @@
 
 vers=${version}
 
-echo 'Lancement du conteneur MySQL...'
-cd mysql/
+echo 'Starting Mariadb ...'
+cd mariadb/
 ./run-image.sh $vers
 cd ..
 
-echo 'Lancement du conteneur Tomee...'
+echo 'Starting TomEE ...'
 cd tomee/
 ./run-image.sh $vers
 cd ..

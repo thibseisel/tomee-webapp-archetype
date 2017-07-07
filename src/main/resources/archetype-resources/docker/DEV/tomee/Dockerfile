@@ -1,30 +1,23 @@
-FROM tomee:8-jdk-7.0.1-plus
+FROM tomee:8-jdk-7.0.3-plus
 
-MAINTAINER "Le lab - Alain Dhennin <alain.dhennin@atos.net>"
-
-# On expose le port 8080 de tomcat a l'exterieur du conteneur
+# Informs that this container listens on port 8080
 EXPOSE 8080
 
-# Dossier de travail
+# Sets the base directory for COPY instructions
 WORKDIR /usr/local/tomee
 
-# Ajout du fichier de configuration des utilisateurs tomee
+# File that grants access to the TomcatManager app
 COPY tomcat-users.xml /usr/local/tomee/conf/tomcat-users.xml  
 
-# Ajout du fichier context.xml pour autoriser les acces aux outils d'administration de tomee
-# - A commenter si Aucune action d'administration n'est réalisée depuis l'interface web de tommee
 COPY context.xml /usr/local/tomee/conf/Catalina/localhost/manager.xml
 
-# Ajout du fichier de configuration tomee (datasources...)
+# TomEE main configuration file
 COPY tomee.xml /usr/local/tomee/conf/tomee.xml  
 
-# Ajout du driver jdbc
+# JDBC driver to connect to Mariadb
 COPY mysql-connector-java-5.1.35-bin.jar /usr/local/tomee/lib/
 
-# Ajout de l'application web
-# - Pas nécessaire depuis l'environneemnt de DEV, le war est déployé depuis Eclipse
-# - via la plugin maven tomcat7-maven-plugin
-#COPY ${artifactId}-${version}.war /usr/local/tomee/webapps/ara.war
+#COPY ${artifactId}-${version}.war /usr/local/tomee/webapps/${artifactId}.war
 
 # Commande par defaut
 CMD ["catalina.sh","run"]

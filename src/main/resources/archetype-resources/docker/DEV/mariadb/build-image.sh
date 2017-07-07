@@ -1,6 +1,6 @@
 #!/bin/sh
 
-name=${artifactId}-mysql
+name=${artifactId}-mariadb
 
 if [ $# -eq 1 ]; then
 	vers=$1

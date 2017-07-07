@@ -2,12 +2,12 @@
 
 vers=${version}
 
-echo 'Construction de MySQL...'
-cd mysql/
+echo 'Constructing Mariadb's image ...'
+cd mariadb/
 ./build-image.sh $vers
 cd ..
 
-echo 'Construction de Tomee...'
+echo 'Constructing TomEE's image ...'
 cd tomee/
 ./build-image.sh $vers
 cd ..	
