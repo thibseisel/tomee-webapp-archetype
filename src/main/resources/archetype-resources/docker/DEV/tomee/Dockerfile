@@ -12,10 +12,10 @@ COPY tomcat-users.xml /usr/local/tomee/conf/tomcat-users.xml
 COPY context.xml /usr/local/tomee/conf/Catalina/localhost/manager.xml
 
 # TomEE main configuration file
-COPY tomee.xml /usr/local/tomee/conf/tomee.xml  
+COPY tomee.xml /usr/local/tomee/conf/tomee.xml
 
 # JDBC driver to connect to Mariadb
-COPY mysql-connector-java-5.1.35-bin.jar /usr/local/tomee/lib/
+COPY mariadb-java-client-2.0.3.jar /usr/local/tomee/lib/
 
 #COPY ${artifactId}-${version}.war /usr/local/tomee/webapps/${artifactId}.war
 
