@@ -7,8 +7,14 @@
 	<artifactId>tomee-webapp-archetype</artifactId>
 	<version>2.1.0</version>
 	<packaging>maven-archetype</packaging>
-
-	<name>tomee-webapp-archetype</name>
+	<description>A Maven archetype that allows quick creation and deployment of a JavaEE webapp.</description>
+	<name>TomEE Webapp Archetype</name>
+	
+	<properties>
+		<bintray.subject>nihilus</bintray.subject>
+		<bintray.repo>maven</bintray.repo>
+		<bintray.package>tomee-webapp-archetype</bintray.package>
+	</properties>
 
 	<build>
 		<extensions>
@@ -32,5 +38,16 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<description>A Maven archetype that allows quick creation and deployment of a JavaEE webapp.</description>
+	
+	<scm>
+		<url>https://github.com/thibseisel/tomee-webapp-archetype</url>
+	</scm>
+	
+	<distributionManagement>
+		<repository>
+			<id>bintray-nihilus-maven</id>
+			<url>https://api.bintray.com/maven/${bintray.subject}/${bintray.repo}/${bintray.package}/;publish=1</url>
+		</repository>
+	</distributionManagement>
+	
 </project>
