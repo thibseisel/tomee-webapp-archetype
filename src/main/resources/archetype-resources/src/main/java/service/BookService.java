@@ -25,7 +25,7 @@ import ${package}.application.BookDao;
 import ${package}.entities.Book;
 import ${package}.utils.GsonInstance;
 
-@Path("api/books")
+@Path("books")
 public class BookService {
 
 	private static final Logger log = Logger.getLogger(BookService.class.getName());
